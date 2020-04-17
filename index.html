@@ -16,9 +16,21 @@
         <aside>MENU</aside>
         <main>
             <div id="input-area">
-                <div class="input-area__container"><label class="input-area__field-label">Подразделение</label><input type="text" id="department"></div>
-                <div class="input-area__container"><label class="input-area__field-label">ФИО</label><input type="text" id="fio"></div>
-                <div class="input-area__container"><label class="input-area__field-label">Тип носителя</label><input type="text" id="storage-type"></div>
+                <div class="input-area__container">
+                    <label class="input-area__field-label">Подразделение</label>
+                    <input type="text" id="department">
+                </div>
+                <div class="input-area__container">
+                    <label class="input-area__field-label">ФИО</label>
+                    <input type="text" id="fio"></div>
+                <div class="input-area__container">
+                    <label class="input-area__field-label">Тип носителя</label>
+                    <select name="Тип носителя" id="storage-type">
+                        <option value="Токен">Токен</option>
+                        <option value="USB-флеш">USB-флеш</option>
+                        <option value="CD-диск">CD-диск</option>
+                    </select>
+                </div>
                 <div class="input-area__container"><label class="input-area__field-label">Срок действия</label><input type="date" id="expiration-date"></div>
 
                 <input type="button" value="Записать" id="userinfo-submit">
