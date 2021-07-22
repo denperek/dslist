@@ -43,7 +43,7 @@ function addRow(i, department, fio, storageType, expirationDate, userId) {
       // let sureDelete = confirm("Вы хотите удалить запись?");
       // if (sureDelete) {
 
-      let response = await fetch(`http://localhost:3000/person/${userId}`, {
+      let response = await fetch(`http://localhost:80/person/${userId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
@@ -80,7 +80,7 @@ submitButton.addEventListener('click', async function () {
   console.log(department.value);
   usersPool.push(new User(department.value, fio.value, storageType.value, expirationDate.value));
 
-  let response = await fetch('http://localhost:3000/person', {
+  let response = await fetch('http://localhost:80/person', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -102,7 +102,7 @@ submitButton.addEventListener('click', async function () {
 
 //-----------------------PEOPLE LIST---------------------------------------
 function peopleList() {
-  fetch('http://localhost:3000/people')
+  fetch('http://localhost:80/people')
     .then((response) => {
       return response.json();
     })

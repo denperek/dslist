@@ -3,7 +3,7 @@ const BodyParser = require('body-parser');
 const Mongoose = require('mongoose');
 const cors = require('cors');
 
-
+const PORT  = process.env.PORT || 80
 
 var app = Express();
 
@@ -79,7 +79,7 @@ app.delete("/person/:id", async (request, response, next) => {
     }
 });
 
-app.listen(3000, () => {
-	console.log('Listening at :3000...');
+app.listen(PORT, () => {
+	console.log('Listening at :80...');
 });
 
