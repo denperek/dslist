@@ -3,50 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователи электрнной подписи</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ecp_icon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <header><img src="ecp.png">
-            <h1>Электронная цифровая подпись</h1>
+            <h1>Пользователи электрнной подписи</h1>
         </header>
-        <aside>MENU</aside>
+  
         <main>
             <div id="input-area">
                 <div class="input-area__container">
-                    <label class="input-area__field-label">Подразделение</label>
-                    <input type="text" id="department">
+                    <input type="text" id="department" placeholder="Подразделение">
                 </div>
                 <div class="input-area__container">
-                    <label class="input-area__field-label">ФИО</label>
-                    <input type="text" id="fio"></div>
+                    <input type="text" id="fio" placeholder="ФИО"></div>
                 <div class="input-area__container">
                     <label class="input-area__field-label">Тип носителя</label>
                     <select name="Тип носителя" id="storage-type">
+                        <option selected value="Не задано" >Не задано</option>
                         <option value="Токен">Токен</option>
                         <option value="USB-флеш">USB-флеш</option>
                         <option value="CD-диск">CD-диск</option>
+                        <option value="CD-диск">Файл</option>
                     </select>
                 </div>
                 <div class="input-area__container"><label class="input-area__field-label">Срок действия</label><input type="date" id="expiration-date"></div>
 
-                <input type="button" value="Записать" id="userinfo-submit">
+                <input type="button" value="Добавить" id="userinfo-submit">
             </div>
 
             <div id="info-container">
-                <div class="output-block">
+                <!--<div class="output-block">
                     <div class="output-area"></div>
                     <div class="output-area"></div>
                     <div class="output-area"></div>
                     <div class="output-area"></div>
-                </div>
+                </div> -->
             </div>
             
             </main>
-        <footer>FOOTER</footer>
+        
     </div>
 
     <script src="script.js"></script>
