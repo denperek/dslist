@@ -18,7 +18,7 @@ function addRow(i, department, fio, storageType, expirationDate, userId) {
 
   function createDelBlock(divClassName, i) {
     let imgDel = new Image(14, 14);
-    imgDel.src = 'del.png';
+    imgDel.src = 'src/img/del.png';
     imgDel.className = `output-area ${divClassName} ${divClassName}-${i}`;
     return imgDel;
   }
