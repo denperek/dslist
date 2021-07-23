@@ -1,11 +1,18 @@
-const Express = require('express');
+const express = require('express');
 const BodyParser = require('body-parser');
 const Mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path')
 
 const PORT  = process.env.PORT || 80
 
-var app = Express();
+const app = express();
+
+app.use(express.static(path.resolve(__dirname, 'client')))
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'index.html'))
+})
+
 
 app.use(cors(
     {
@@ -22,6 +29,8 @@ Mongoose.connect('mongodb+srv://denperek:yakvut7@cluster0-as9x9.mongodb.net/dsli
 
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended: true}));
+
+
 
 const PersonModel = Mongoose.model("person", {
     department: String,
@@ -40,6 +49,15 @@ app.post("/person", async (request, response, next) => {
     	response.status(500).send(error); 
 	}
 });
+
+// app.get("/", async (request, response, next) => {
+//     try {
+        
+//         response.send("It Works! Use API to get info.");
+//     } catch (error) {
+//     	response.status(500).send(error); 
+// 	}
+// });
 
 app.get("/people", async (request, response, next) => {
     try {
